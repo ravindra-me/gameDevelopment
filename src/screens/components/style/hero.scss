@@ -7,13 +7,13 @@ $light-color: #09c3e2;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 100vmax / 1600 * 100;
-  @media (max-width: 992px) {
-    font-size: 100vmax / 992 * 100;
-  }
-}
-body {
+// html {
+//   font-size: 100vmax / 1600 * 100;
+//   @media (max-width: 992px) {
+//     font-size: 100vmax / 992 * 100;
+//   }
+// }
+.hero-container {
   position: relative;
   min-height: 100vh;
 
@@ -27,7 +27,7 @@ body {
     #4b6b71 40%,
     #111 60%
   );
-  font-size: 0.18rem;
+  font-size: 1rem;
   font-family: "Ovo", serif;
 }
 
@@ -78,8 +78,8 @@ body {
 
 .round {
   position: relative;
-  width: 5rem;
-  height: 5rem;
+  width: 30rem;
+  height: 30rem;
   flex-shrink: 0;
   // round border
   &:before {
@@ -89,15 +89,15 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 4rem;
-    height: 4rem;
+    width: 29rem;
+    height: 29rem;
     margin: auto;
     border-radius: 50%;
     border-top: 5px solid $main-color;
     animation: rotate 5s 0.2s both linear infinite;
   }
 
-  $item-size: 0.8rem;
+  $item-size: 5rem;
   .item {
     position: absolute;
     top: 50%;
@@ -149,7 +149,7 @@ body {
 }
 
 .hero-info {
-  width: 4rem;
+  width: 40%;
   padding: 0.2rem;
   flex-shrink: 0;
 

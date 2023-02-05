@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style/hero.scss";
 let data = {
   isFullscreen: false,
@@ -79,44 +79,83 @@ let data = {
   ],
 };
 
-export default function Hero() {
-  const itemPosition = () => {
-    const len = data.length;
-    return data.map((_, key) => {
-      const deg = (360 / len) * key - 90;
-      const radius = "2rem";
-      return `rotate(${deg}deg) translate(${radius}) rotate(${-deg}deg)`;
-    });
+function RoutedDlider({ key, setActiveIndex, activeIndex }) {
+  const itemPosition = (key) => {
+    const len = data.list.length;
+    const deg = (360 / len) * key - 90;
+    const radius = "15rem";
+    return `rotate(${deg}deg) translate(${radius}) rotate(${-deg}deg)`;
   };
   return (
+    <div className="round">
+      {data.list.map((el, index) => {
+        return (
+          <div
+            className={`item ${index === activeIndex ? "active" : ""}`}
+            onClick={() => setActiveIndex(index)}
+            key={key}
+            style={{ transform: itemPosition(index) }}
+          >
+            <div className="inner">
+              <img src={el.thumbImg} alt="" />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export default function Hero() {
+  const [activeIndex, setActiveIndex] = useState(data.activeIndex);
+
+  return (
     <>
-      <div id="app">
-        {data.map((activeInfo) => {
-          <>
-            <div
-              className="hero-bg"
-              style={{ backgroundImage: `url(${activeInfo.img})` }}
-              key="activeIndex"
-            ></div>
-            <div className="hero-title" key="activeIndex">
-              {activeInfo.name}
-            </div>
-            <div className="round">
-              <div
-                className="item"
-                // className={activeIndex === key ? "active" : ""}
-                // onClick={() => (activeIndex = key)}
-                // v-for={() => (el, key) in list}
-                // key="key"
-                // style={{ transform: itemPosition[key] }}
-              >
-                <div className="inner">
-                  <img src="el.thumbImg" alt="" />
-                </div>
-              </div>
-            </div>
-          </>;
-        })}
+      <div className="hero-container">
+        <div id="app">
+          {data.list.map((activeInfo, key) => {
+            if (activeIndex === key) {
+              return (
+                <>
+                  <div
+                    className="hero-bg"
+                    style={{ backgroundImage: `url(${activeInfo.img})` }}
+                    key="activeIndex"
+                  ></div>
+                  <div className="hero-title" key="activeIndex">
+                    {activeInfo.name}
+                  </div>
+                  <RoutedDlider
+                    key={key}
+                    setActiveIndex={setActiveIndex}
+                    activeIndex={activeIndex}
+                  />
+                  <div class="hero-info" v-if="activeInfo" key="activeIndex">
+                    <div class="row">
+                      <div class="title">name</div>
+                      <div class="content">{activeInfo.name}</div>
+                    </div>
+                    <div class="row">
+                      <div class="title">role</div>
+                      <div class="content">{activeInfo.role}</div>
+                    </div>
+                    <div class="row">
+                      <div class="title">difficulty</div>
+                      <div class="content">{activeInfo.difficulty}</div>
+                    </div>
+                    <div class="row">
+                      <div class="title">description</div>
+                      <div class="content desc">{activeInfo.desc}</div>
+                    </div>
+                  </div>
+                  <div class="fullscreen-icon" click="toggleFullScreen">
+                    <span v-for="item in 4" key={key}></span>
+                  </div>
+                </>
+              );
+            }
+          })}
+        </div>
       </div>
     </>
   );

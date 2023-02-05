@@ -74,6 +74,9 @@ const GlobalStyles = createGlobalStyle`
         background-color: #fff;
         border: 1px solid #404040;
     }
+    .root{
+        width:100vw ;
+    }
 `;
 
 export default GlobalStyles;
