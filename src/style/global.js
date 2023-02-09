@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-
+var fontFamilyOxanium = "'Oxanium', cursive";
+var fontFamilyWorkSans = "'Work Sans', sans-serif";
 const GlobalStyles = createGlobalStyle`
     /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
@@ -77,6 +78,42 @@ const GlobalStyles = createGlobalStyle`
     .root{
         width:100vw ;
     }
+    body{
+    background-color: hsla(279, 42%, 9%, 1);
+    background-image: url("./images/body-bg.jpg");
+    background-repeat: repeat;
+    color: var(--text-gainsboro);
+    font-family: ${fontFamilyWorkSans};
+    overflow-x: hidden;
+    line-height:1.6 ;
+    }
 `;
+
+/* background color */
+var bgPurple = "hsla(267, 100%, 63%, 1)";
+var bgPurpleAlpha30 = "hsla(267, 100%, 63%, 0.3)";
+var bgDarkPurple = "hsla(279, 42%, 9%, 1)";
+var bgOxfordBlue = "hsla(240, 63%, 13%, 1)";
+var bgOxfordBlueAlpha95 = "hsla(240, 63%, 13%, 0.95)";
+var bgOxfordBlueAlpha90 = "hsla(240, 63%, 13%, 0.9)";
+var bgOxfordBlueAlpha80 = "hsla(240, 63%, 13%, 0.8)";
+var textWhite = "#fff";
+var textGainsBoro = "hsla(0, 0%, 87%, 1)";
+var textChampagnePink = "hsla(23, 61%, 86%, 1)";
+var textPurple = "hsla(267, 100%, 63%, 1)";
+
+export const colorPlate = {
+  bgPurple,
+  bgPurpleAlpha30,
+  bgDarkPurple,
+  bgOxfordBlue,
+  bgOxfordBlueAlpha95,
+  bgOxfordBlueAlpha90,
+  bgOxfordBlueAlpha80,
+  textWhite,
+  textGainsBoro,
+  textChampagnePink,
+  textPurple,
+};
 
 export default GlobalStyles;
