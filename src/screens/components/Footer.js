@@ -1,4 +1,11 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 import {
   Container,
   FlexContainer,
@@ -7,6 +14,7 @@ import {
 import {
   FooterContainer,
   FlexFooterContainer,
+  FooterTestimonialContainer,
 } from "../../style/components/Footer";
 export default function Footer() {
   return (
@@ -23,54 +31,44 @@ export default function Footer() {
                 alt="Unigine logo"
               />
             </a>
-
             <p class="footer-text">
               Our success in creating business solutions is due in large part to
               our talented and highly committed team.
             </p>
-
             <ul class="social-list">
               <li>
                 <a href="#" class="social-link">
-                  <ion-icon
-                    name="logo-facebook"
-                    role="img"
-                    class="md hydrated"
-                    aria-label="logo facebook"
-                  ></ion-icon>
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    style={{ color: "white", fontSize: "1.5rem" }}
+                  />
                 </a>
               </li>
 
               <li>
                 <a href="#" class="social-link">
-                  <ion-icon
-                    name="logo-twitter"
-                    role="img"
-                    class="md hydrated"
-                    aria-label="logo twitter"
-                  ></ion-icon>
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    style={{ color: "white", fontSize: "1.5rem" }}
+                  />
                 </a>
               </li>
 
               <li>
                 <a href="#" class="social-link">
-                  <ion-icon
-                    name="logo-instagram"
-                    role="img"
-                    class="md hydrated"
-                    aria-label="logo instagram"
-                  ></ion-icon>
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    style={{ color: "white", fontSize: "1.5rem" }}
+                  />
                 </a>
               </li>
 
               <li>
                 <a href="#" class="social-link">
-                  <ion-icon
-                    name="logo-youtube"
-                    role="img"
-                    class="md hydrated"
-                    aria-label="logo youtube"
-                  ></ion-icon>
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    style={{ color: "white", fontSize: "1.5rem" }}
+                  />
                 </a>
               </li>
             </ul>
@@ -111,7 +109,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
           <div class="footer-list">
             <p class="title footer-list-title has-after">Contact Us</p>
 
@@ -142,11 +139,11 @@ export default function Footer() {
         </FlexFooterContainer>
       </FooterContainer>
 
-      <FooterContainer class="footer-bottom">
+      <FooterTestimonialContainer class="footer-bottom">
         <FlexCenterContainer class="container">
           <p class="copyright">Copyright ©2023. Powered by RBOne</p>
         </FlexCenterContainer>
-      </FooterContainer>
+      </FooterTestimonialContainer>
     </footer>
   );
 }

@@ -42,6 +42,14 @@ export const FooterContainer = styled(Container)`
       margin-block-end: 15px;
     }
   }
+  .social-list {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    li {
+      margin-right: 1rem;
+    }
+  }
   .footer-link:is(:hover, :focus-visible) {
     color: var(--text-purple);
   }
@@ -49,4 +57,9 @@ export const FooterContainer = styled(Container)`
 
 export const FlexFooterContainer = styled(FlexContainer)`
   align-items: flex-start;
+`;
+
+export const FooterTestimonialContainer = styled(FooterContainer)`
+  clip-path: var(--clip-path-9);
+  background-color: ${colorPlate.bgOxfordBlueAlpha80};
 `;
