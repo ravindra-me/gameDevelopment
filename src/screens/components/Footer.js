@@ -6,16 +6,39 @@ import {
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  Container,
-  FlexContainer,
-  FlexCenterContainer,
-} from "../../style/modules/general";
+import { FlexCenterContainer } from "../../style/modules/general";
 import {
   FooterContainer,
   FlexFooterContainer,
   FooterTestimonialContainer,
 } from "../../style/components/Footer";
+const socialData = [
+  { icon: faFacebook },
+  { icon: faInstagram },
+  {
+    icon: faTwitter,
+  },
+  {
+    icon: faLinkedin,
+  },
+];
+const useFullListData = [
+  {
+    name: "Games",
+  },
+  {
+    name: "Help Center",
+  },
+  {
+    name: "Privacy and Policy",
+  },
+  {
+    name: "Terms of Use",
+  },
+  {
+    name: "Contact Us",
+  },
+];
 export default function Footer() {
   return (
     <footer class="footer">
@@ -36,77 +59,32 @@ export default function Footer() {
               our talented and highly committed team.
             </p>
             <ul class="social-list">
-              <li>
-                <a href="#" class="social-link">
-                  <FontAwesomeIcon
-                    icon={faFacebook}
-                    style={{ color: "white", fontSize: "1.5rem" }}
-                  />
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="social-link">
-                  <FontAwesomeIcon
-                    icon={faInstagram}
-                    style={{ color: "white", fontSize: "1.5rem" }}
-                  />
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="social-link">
-                  <FontAwesomeIcon
-                    icon={faTwitter}
-                    style={{ color: "white", fontSize: "1.5rem" }}
-                  />
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="social-link">
-                  <FontAwesomeIcon
-                    icon={faLinkedin}
-                    style={{ color: "white", fontSize: "1.5rem" }}
-                  />
-                </a>
-              </li>
+              {socialData.map((elem) => {
+                return (
+                  <li>
+                    <a href="#" class="social-link">
+                      <FontAwesomeIcon
+                        icon={elem.icon}
+                        style={{ color: "white", fontSize: "1.5rem" }}
+                      />
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
-
           <div class="footer-list">
             <p class="title footer-list-title has-after">Usefull Links</p>
-
             <ul>
-              <li>
-                <a href="#" class="footer-link">
-                  Tournaments
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="footer-link">
-                  Help Center
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="footer-link">
-                  Privacy and Policy
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="footer-link">
-                  Terms of Use
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="footer-link">
-                  Contact Us
-                </a>
-              </li>
+              {useFullListData.map((elem) => {
+                return (
+                  <li>
+                    <a href="#" class="footer-link">
+                      {elem.name}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div class="footer-list">

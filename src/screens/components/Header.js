@@ -31,7 +31,7 @@ export default function Header() {
 
               <li class="navbar-item">
                 <a href="#tournament" class="navbar-link" data-nav-link>
-                  tournament
+                  games
                 </a>
               </li>
 

@@ -50,6 +50,10 @@ export const FooterContainer = styled(Container)`
       margin-right: 1rem;
     }
   }
+  .footer .social-link:is(:hover, :focus-visible) {
+    background-color: ${colorPlate.bgPurple};
+    transform: translateY(-2px);
+  }
   .footer-link:is(:hover, :focus-visible) {
     color: var(--text-purple);
   }
