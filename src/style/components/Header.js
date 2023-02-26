@@ -12,6 +12,7 @@ export const HeaderElem = styled.header`
   a {
     text-decoration: none;
   }
+  height: 81;
 `;
 
 export const HeaderContainer = styled(Container)`

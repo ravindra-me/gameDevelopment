@@ -4,6 +4,7 @@ import { FlexContainer, Container } from "../modules/general";
 
 export const FooterContainer = styled(Container)`
   padding: 2rem 0;
+  height: 403;
   .footer-brand {
     flex: 0 1 30%;
   }

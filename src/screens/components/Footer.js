@@ -116,7 +116,6 @@ export default function Footer() {
           </div>
         </FlexFooterContainer>
       </FooterContainer>
-
       <FooterTestimonialContainer class="footer-bottom">
         <FlexCenterContainer class="container">
           <p class="copyright">Copyright ©2023. Powered by RBOne</p>
